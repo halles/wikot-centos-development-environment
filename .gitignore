@@ -1,2 +1,4 @@
 .vagrant
 build/
+var/log
+var/lib/mysql
