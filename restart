@@ -1,0 +1,23 @@
+case "$1" in
+    nginx)
+        vagrant ssh -c 'sudo systemctl restart nginx'
+        ;;
+
+    mysql)
+        vagrant ssh -c 'sudo systemctl restart mysqld'
+        ;;
+
+    php)
+        vagrant ssh -c 'sudo systemctl restart php-fpm'
+        ;;
+
+    stack)
+            vagrant ssh -c 'sudo systemctl restart nginx && sudo systemctl restart mysqld && sudo systemctl restart php-fpm'
+        ;;
+
+    *)
+        echo $"Usage: $0 {nginx|mysql|php|stack}"
+        exit 1
+
+esac
+
