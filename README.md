@@ -33,17 +33,18 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 
 ## Requerimientos
 
-+ VirtualBox 4.3.26
-+ Vagrant
++ [VirtualBox 4.3.26](https://www.virtualbox.org/wiki/Downloads)
++ [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ## Instalación
 
 1. Instalar VirtualBox
 2. Instalar Vagrant
 3. Clonar el repositorio en un directorio directamente dentro del directorio que contiene la raiz de los proyectos: ```clone git@code.wktapp.com:devops/wikot-centos-development-environment.git stack```
-4. Ejecutar ```vagrant up```
-5. Ejecutar ```./restart stack```
-6. Navegar a http://localhost:8080/ para verificar su funcionamiento
+4. Ingresar al directorio donde clonaron el repositorio: ```cd stack```
+5. Ejecutar ```vagrant up```
+6. Ejecutar ```./restart stack``` (Los que tengan windows tendrán que ingresar con las instrucciones de más abajo y reiniciar cada servicio con ```systemctl restart nginx && systemctl restart php-fpm && systemctl restart mysqld```. Todavía falta algún script que ayude a esto.)
+7. Navegar a http://localhost:8080/ para verificar su funcionamiento
 
 # Redireccionamiento de puertos
 
