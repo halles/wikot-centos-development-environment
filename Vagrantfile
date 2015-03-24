@@ -6,6 +6,10 @@ Vagrant.configure(2) do |config|
   config.vm.box = "halles/wcde"
   config.vm.box_version = "~> 0.0.7"
 
+  config.vm.provider "virtualbox" do |v|
+    v.name = "WCDE"
+  end
+
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 443, host: 8443
   config.vm.network "forwarded_port", guest: 8980, host: 8980
