@@ -40,7 +40,7 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 
 1. Instalar VirtualBox
 2. Instalar Vagrant
-3. Clonar el repositorio en un directorio directamente dentro del directorio que contiene la raiz de los proyectos
+3. Clonar el repositorio en un directorio directamente dentro del directorio que contiene la raiz de los proyectos: ```clone git@code.wktapp.com:devops/wikot-centos-development-environment.git stack```
 4. Ejecutar ```vagrant up```
 5. Ejecutar ```./restart stack```
 6. Navegar a http://localhost:8080/ para verificar su funcionamiento
