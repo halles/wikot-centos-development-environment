@@ -2,3 +2,5 @@
 build/
 var/log
 var/lib/mysql
+var/phpMyAdmin/save
+var/phpMyAdmin/upload
