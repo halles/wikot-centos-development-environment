@@ -58,6 +58,21 @@ Los datos de MySQL viven dentro de la máquina. Es decir, si la máquina es rein
 
 # Ingreso por SSH
 
+## OS X o Linux
+
 Para ingresar a la máquina a realizar configuraciones o levantar servicios (ej: aplicación de node), ejecutar ```vagrant ssh```
 
-**Recuerda que al reinicializar la máquina (ej: ```vagrant destroy && vagrant up```) se perderán las configuraciones. Por esta razón las configuraciones de proyecto deben ingresarse en los directorios correspondientes dentro de ```./etc/```
+## Windows
+
+Debes descargar la aplicación putty y utilizar la siguiente configuración para conectarte a la máquina:
+
+```
+host: localhost
+user: vagrant
+pass: vagrant
+puerto: 2222
+```
+
+**Recuerda que al reinicializar la máquina (ej: ```vagrant destroy && vagrant up```) se perderán las configuraciones. Por esta razón las configuraciones de proyecto deben ingresarse en los directorios correspondientes dentro de ```./etc/```**
+
+
