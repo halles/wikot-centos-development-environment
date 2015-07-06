@@ -1,6 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+unless Vagrant.has_plugin?("vagrant-bindfs")
+  raise 'vagrant-bindfs is not installed! Please install with vagrant plugin install vagrant-bindfs'
+end
+
 unless Vagrant.has_plugin?("vagrant-vbguest")
   raise 'vagrant-bindfs is not installed! Please install with vagrant plugin install vagrant-vbguest'
 end
