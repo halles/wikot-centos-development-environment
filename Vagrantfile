@@ -18,13 +18,26 @@ Vagrant.configure(2) do |config|
     v.name = "WCDE"
   end
 
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 443, host: 8443
-  config.vm.network "forwarded_port", guest: 8980, host: 8980
-  config.vm.network "forwarded_port", guest: 3306, host: 3306
   config.vbguest.auto_update = true
 
   config.vm.synced_folder "./", "/vagrant", owner: "vagrant", group: "vagrant", :mount_options => ["dmode=777","fmode=666"]
   config.vm.synced_folder "../", "/sites", owner: "vagrant", group: "vagrant", :mount_options => ["dmode=777","fmode=666"]
+  config.vm.network "private_network", type: "dhcp"
+
+  # Regular services ports
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080   # HTTP
+  config.vm.network "forwarded_port", guest: 443, host: 8443  # HTTPS
+  config.vm.network "forwarded_port", guest: 8980, host: 8980 # phpMyAdmin on HTTP
+  config.vm.network "forwarded_port", guest: 3306, host: 3306 # MySQL
+  config.vm.network "forwarded_port", guest: 3306, host: 3306 # MongoDB
+
+  # Extra ports for extra services: nodejs, ruby, etc.
+
+  config.vm.network "forwarded_port", guest: 9000, host: 9000 
+  #config.vm.network "forwarded_port", guest: 9001, host: 9001
+  #config.vm.network "forwarded_port", guest: 9002, host: 9002
+  # config.vm.network "forwarded_port", guest: 9003, host: 9003
+
 
 end
