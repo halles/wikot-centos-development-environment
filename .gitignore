@@ -4,3 +4,7 @@ var/log
 var/lib/mysql
 var/phpMyAdmin/save
 var/phpMyAdmin/upload
+etc/nginx/certificates
+etc/nginx/conf.d
+etc/nginx/default.d
+etc/php-fpm.d
