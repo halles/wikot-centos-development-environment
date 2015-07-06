@@ -33,7 +33,7 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 
 ## Requerimientos
 
-+ [VirtualBox 4.3.26](https://www.virtualbox.org/wiki/Downloads)
++ [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 + [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ## Instalación
