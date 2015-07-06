@@ -24,10 +24,13 @@ Vagrant.configure(2) do |config|
 
   # Regular services ports
 
-  config.vm.network "forwarded_port", guest: 80, host: 8080   # HTTP
-  config.vm.network "forwarded_port", guest: 443, host: 8443  # HTTPS
-  config.vm.network "forwarded_port", guest: 8980, host: 8980 # phpMyAdmin on HTTP
-  config.vm.network "forwarded_port", guest: 3306, host: 3306 # MySQL
+  config.vm.network "forwarded_port", guest: 80, host: 8080     # HTTP
+  config.vm.network "forwarded_port", guest: 443, host: 8443    # HTTPS
+
+  config.vm.network "forwarded_port", guest: 8980, host: 8980   # phpMyAdmin
+  config.vm.network "forwarded_port", guest: 8981, host: 8981   # MongoExpress
+
+  config.vm.network "forwarded_port", guest: 3306, host: 3306   # MySQL
   config.vm.network "forwarded_port", guest: 27017, host: 27017 # MongoDB
 
   # Extra ports for extra services: nodejs, ruby, etc.
