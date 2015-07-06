@@ -20,8 +20,6 @@ Vagrant.configure(2) do |config|
 
   config.vbguest.auto_update = true
 
-  config.vm.synced_folder "./", "/vagrant", owner: "vagrant", group: "vagrant", :mount_options => ["dmode=777","fmode=666"]
-  config.vm.synced_folder "../", "/sites", owner: "vagrant", group: "vagrant", :mount_options => ["dmode=777","fmode=666"]
   config.vm.network "private_network", type: "dhcp"
 
   # Regular services ports
@@ -39,5 +37,7 @@ Vagrant.configure(2) do |config|
   #config.vm.network "forwarded_port", guest: 9002, host: 9002
   # config.vm.network "forwarded_port", guest: 9003, host: 9003
 
+  config.vm.synced_folder "../", "/sites-unbinded", type: :nfs
+  config.bindfs.bind_folder "/sites-unbinded", "/sites", :force_user  => "vagrant", :force_group => "vagrant", :create_as_user => true
 
 end
