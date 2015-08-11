@@ -23,11 +23,11 @@ Vagrant.configure(2) do |config|
   # comentar las siguientes 2 líneas y especificar el nombre de la
   # máquina de vagrant en la siguiente
 
-  # config.vm.box = "halles/wcde"
-  # config.vm.box_version = "~> 0.0.9"
+  config.vm.box = "halles/wcde"
+  config.vm.box_version = "~> 0.0.9"
 
   # Nombre de la máquina local de vagrant
-  config.vm.box = "wcde-dev"
+  # config.vm.box = "wcde-dev"
 
   config.vm.provider "virtualbox" do |v|
     v.name = "WCDE"
