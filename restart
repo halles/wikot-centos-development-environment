@@ -11,8 +11,12 @@ case "$1" in
         vagrant ssh -c 'sudo systemctl restart php-fpm'
         ;;
 
+    mongod)
+        vagrant ssh -c 'sudo systemctl restart mongod'
+        ;;
+
     stack)
-            vagrant ssh -c 'sudo systemctl restart nginx && sudo systemctl restart mysqld && sudo systemctl restart php-fpm'
+            vagrant ssh -c 'sudo systemctl restart nginx && sudo systemctl restart mysqld && sudo systemctl restart php-fpm && sudo systemctl restart mongod'
         ;;
 
     *)
