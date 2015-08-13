@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
   # comentar las siguientes 2 líneas y configurar las líneas siguientes
 
   config.vm.box = "halles/wcde"
-  config.vm.box_version = "~> 0.0.9"
+  config.vm.box_version = "~> 0.0.20"
 
   # Nombre de la máquina local de vagrant
   # config.vm.box = "wcde-dev"
