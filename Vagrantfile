@@ -47,6 +47,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 27017, host: 27017 # MongoDB
 
   config.vm.network "forwarded_port", guest: 8980, host: 8980   # phpMyAdmin
+  config.vm.network "forwarded_port", guest: 8981, host: 8981   # Mongo Express
   
   for i in 9001..9010 # NodeJS or other services
     config.vm.network :forwarded_port, guest: i, host: i

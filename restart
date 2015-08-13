@@ -15,8 +15,12 @@ case "$1" in
         vagrant ssh -c 'sudo systemctl restart mongod'
         ;;
 
+    mongo-express)
+        vagrant ssh -c 'sudo forever stop /usr/share/mongo-express/app.js ; sudo forever start /usr/share/mongo-express/app.js'
+        ;;
+
     stack)
-            vagrant ssh -c 'sudo systemctl restart nginx && sudo systemctl restart mysqld && sudo systemctl restart php-fpm && sudo systemctl restart mongod'
+            vagrant ssh -c 'sudo systemctl restart nginx ; sudo systemctl restart mysqld ; sudo systemctl restart php-fpm ; sudo systemctl restart mongod ; sudo forever stop /usr/share/mongo-express/app.js ; sudo forever start /usr/share/mongo-express/app.js'
         ;;
 
     *)
