@@ -1,21 +1,25 @@
 # Wikot Centos Development Environment
 
-Este set de scripts permitirán utilizar de manera contenida una máquina virtual
-que contiene las mismas herramientas y configuraciones que se utilizan en los
+Este set de scripts permitirán utilizar, de manera contenida, una máquina virtual
+que cuenta las mismas herramientas y configuraciones que se utilizan en los
 ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 
-## Servicios Principales
+## Servicios
 
-+ nginx 1.6.2
-+ mysql 5.6.2
-+ php 5.5.22 a través de php-fpm
+1. Usuario de control con sudo
+2. Bloqueo de acceso remoto a root
+3. Nginx 1.8
+4. MySQL Server 5.6
+5. Mongo DB 3.0
 
 ## Herramientas
 
-+ phpMyAdmin
-+ node, npm (gulp, bower y forever)
-+ ruby, gems (sass)
-+ composer
++ PHP 5.5 + php-fpm + composer + imagemagick
++ Ruby 2.0 + Gems + Sass
++ Node 0.10.36 + NPM + forever + yeoman
+
++ phpMyAdmin: [http://localhost:8980/](http://localhost:8980/)
++ Mongo-express: [http://localhost:8981/](http://localhost:8981/)
 
 ## Utilidades
 
@@ -56,6 +60,13 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 Los datos de MySQL viven dentro de la máquina. Es decir, si la máquina es reinicializada (```vagrant destroy && vagrant up```) estos datos se perderán. Realizar un backup utilizando phpMyAdmin en caso de querer mantener los datos tras una reinicialización o actualización.
 
 (Tarea por hacer, backup de datos antes de actualizar la máquina)
+
+
+# ./etc y ./var
+
+El directorio ./etc contiene una estructura simil a la que se encuentra dentro de la máquina virtual donde podrás ingresar configuraciones de nginx y php.
+
+El directorio ./var también tiene una estructura simil a /var dentro de la máquina virtual. Los servicios se encuentran configurados para dejar sus logs en este directorio.
 
 # Ingreso por SSH
 
