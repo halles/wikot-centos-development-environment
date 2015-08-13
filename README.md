@@ -17,7 +17,6 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 + PHP 5.5 + php-fpm + composer + imagemagick
 + Ruby 2.0 + Gems + Sass
 + Node 0.10.36 + NPM + forever + yeoman
-
 + phpMyAdmin: [http://localhost:8980/](http://localhost:8980/)
 + Mongo-express: [http://localhost:8981/](http://localhost:8981/)
 
