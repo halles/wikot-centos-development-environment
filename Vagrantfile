@@ -20,14 +20,18 @@ end
 Vagrant.configure(2) do |config|
 
   # Si se está utilizando una versión local de la máquina de vagrant,
-  # comentar las siguientes 2 líneas y especificar el nombre de la
-  # máquina de vagrant en la siguiente
+  # desde el registro de vagrant o directamente desde la descarga,
+  # comentar las siguientes 2 líneas y configurar las líneas siguientes
 
   config.vm.box = "halles/wcde"
   config.vm.box_version = "~> 0.0.9"
 
   # Nombre de la máquina local de vagrant
   # config.vm.box = "wcde-dev"
+
+  # En caso de necesitar utilizar el box previamente descargado
+  # usar esta línea para definir la ruta al archivo.
+  # config.vm.url = "./maquina-local.box"
 
   config.vm.provider "virtualbox" do |v|
     v.name = "WCDE"
