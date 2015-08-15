@@ -34,7 +34,9 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 
 + El sistema tiene el firewall deshabilitado
 
-# Requerimientos de Hardware
+# Requerimientos
+
+## Hardware
 
 La máquina virtual requiere de soporte para virtualización y procesador de 64 bits en la máquina host. Debe verificarse si es que está activado. En general los equipos Apple tienen este soporte activado por defecto. Para otras equipos, revisar la configuración de la BIOS del equipo y en su defecto si es que este soporta algún tipo de virtualización.
 
