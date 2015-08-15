@@ -89,14 +89,14 @@ Los datos de MySQL viven dentro de la máquina. Es decir, si la máquina es rein
 La máquina por defecto montará el directorio padre al local ```../``` en ```/sites``` dentro de la máquina virtual. En caso de que hubiesemos clonado la herramienta en el directorio Sites/wcde dentro de nuestro usuario, la estructura sería la siguiente:
 
 ```
-| Host            | Guest        |
-==================================
-/home             |              |
-  ∟ /user         |              |
-    ∟ /Sites      | /sites       |
-      ∟ /Alpha    | ∟ /Alpha     |
-      ∟ /Kotex    | ∟ /Kotex     |
-      ∟ /wcde     | ∟ /wcde      |
+| Host              | Guest        |
+====================================
+| /home             |              |
+|   ∟ /user         |              |
+|     ∟ /Sites      | /sites       |
+|       ∟ /Alpha    | ∟ /Alpha     |
+|       ∟ /Kotex    | ∟ /Kotex     |
+|       ∟ /wcde     | ∟ /wcde      |
 ```
 
 ## /vagrant
