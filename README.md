@@ -34,10 +34,29 @@ ambientes de desarrollo de wikot. El Sistema opertivo actualmente es CentOS 7
 
 + El sistema tiene el firewall deshabilitado
 
-## Requerimientos
+# Requerimientos de Hardware
+
+La máquina virtual requiere de soporte para virtualización y procesador de 64 bits en la máquina host. Debe verificarse si es que está activado. En general los equipos Apple tienen este soporte activado por defecto. Para otras equipos, revisar la configuración de la BIOS del equipo y en su defecto si es que este soporta algún tipo de virtualización.
+
+## Requerimientos OSX / Linux
 
 + [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 + [Vagrant](https://www.vagrantup.com/downloads.html)
+
+Además, se requerirán una serie de plugins para la ejecución de la máquina. El Vagrantfile entregará las alertas necesarias en caso de no estar instalados. Alternativamente puedes instalarlos directamente aquí:
+
+```
+$ vagrant plugin install vagrant-bindfs
+$ vagrant plugin install vagrant-vbguest
+```
+
+### Requerimientos Adicionales para Windows
+
+Adicionalmente, para poder correr la máquina en Windows, se requiere un tercer plugin:
+
+```
+$ vagrant plugin install vagrant-winnfsd
+```
 
 ## Instalación
 
@@ -61,7 +80,30 @@ Los datos de MySQL viven dentro de la máquina. Es decir, si la máquina es rein
 (Tarea por hacer, backup de datos antes de actualizar la máquina)
 
 
-# ./etc y ./var
+# Directorios Compartidos con la máquina host
+
+## /sites
+
+La máquina por defecto montará el directorio padre al local ```../``` en ```/sites``` dentro de la máquina virtual. En caso de que hubiesemos clonado la herramienta en el directorio Sites/wcde dentro de nuestro usuario, la estructura sería la siguiente:
+
+```
+| Host            | Guest        |
+===================================
+/home             |              |
+  ∟ /user         |              |
+    ∟ /Sites      | /sites       |
+      ∟ /Alpha    | ∟ /Alpha     |
+      ∟ /Kotex    | ∟ /Kotex     |
+	    ∟ /wcde     | ∟ /wcde      |
+```
+
+## /vagrant
+
+El directorio /vagrant está directamente montado en donde recide la máquina virtual. Los servicios están configurados para tomar configuraciones de nginx y php desde este directorio, además de entregar logs a estas rutas.
+
+Es escencial tomar en cuenta las rutas que se ingresen en las configuraciones respecto a los archivos que residen en /sites.
+
+### ./etc y ./var
 
 El directorio ./etc contiene una estructura simil a la que se encuentra dentro de la máquina virtual donde podrás ingresar configuraciones de nginx y php.
 
@@ -75,13 +117,16 @@ Para ingresar a la máquina a realizar configuraciones o levantar servicios (ej:
 
 ## Windows
 
-Debes descargar la aplicación putty y utilizar la siguiente configuración para conectarte a la máquina:
+La instalación de git provee bash para realizar conexiones por ssh hacia la máuina virtual usando los mismos comandos que se utilizarían en linux, incluyendo el poder reiniciar los servicios desde fuera de la máquina.
+
+Alternativamente puedes usar putty u otra utilidad, usando los siguientes datos:
+
 
 ```
 host: localhost
+puerto: 2222
 user: vagrant
 pass: vagrant
-puerto: 2222
 ```
 
 **Recuerda que al reinicializar la máquina (ej: ```vagrant destroy && vagrant up```) se perderán las configuraciones. Por esta razón las configuraciones de proyecto deben ingresarse en los directorios correspondientes dentro de ```./etc/```**
