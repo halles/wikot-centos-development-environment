@@ -4,16 +4,22 @@
 Vagrant.require_version ">= 1.7.0"
 
 unless Vagrant.has_plugin?("vagrant-bindfs")
-  raise 'vagrant-bindfs is not installed! Please install with vagrant plugin install vagrant-bindfs'
+  STDOUT.write "\nvagrant-bindfs is not installed! Please install using\n"
+  STDOUT.write "$ vagrant plugin install vagrant-bindfs\n\n"
+  exit
 end
 
 unless Vagrant.has_plugin?("vagrant-vbguest")
-  raise 'vagrant-bindfs is not installed! Please install with vagrant plugin install vagrant-vbguest'
+  STDOUT.write "\nvagrant-vbguest is not installed! Please install using\n"
+  STDOUT.write "$ vagrant plugin install vagrant-vbguest\n\n"
+  exit
 end
 
 if Vagrant::Util::Platform.windows?
   unless Vagrant.has_plugin?("vagrant-winnfsd")
-    raise 'vagrant-winnfsd is not installed! Please install with vagrant plugin install vagrant-winnfsd'
+    STDOUT.write "\nvagrant-winnfsd is not installed! Please install using\n"
+    STDOUT.write "$ vagrant plugin install vagrant-winnfsd\n\n"
+    exit
   end
 end
 
