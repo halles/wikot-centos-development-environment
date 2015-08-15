@@ -90,13 +90,13 @@ La máquina por defecto montará el directorio padre al local ```../``` en ```/s
 
 ```
 | Host            | Guest        |
-===================================
+==================================
 /home             |              |
   ∟ /user         |              |
     ∟ /Sites      | /sites       |
       ∟ /Alpha    | ∟ /Alpha     |
       ∟ /Kotex    | ∟ /Kotex     |
-	    ∟ /wcde     | ∟ /wcde      |
+      ∟ /wcde     | ∟ /wcde      |
 ```
 
 ## /vagrant
